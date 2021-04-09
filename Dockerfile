@@ -7,6 +7,7 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/*
 
 ENV DATA_DIR=/owncast
+ENV START_PARAMS=""
 ENV OWNCAST_V="latest"
 ENV UMASK=000
 ENV UID=99
