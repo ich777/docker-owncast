@@ -22,7 +22,7 @@ fi
 
 echo "---Version Check---"
 if [ -z "$CUR_V" ]; then
-    echo "---Owncast not found, downloading and installing v$GAME_V...---"
+    echo "---Owncast not found, downloading and installing v$OWNCAST_V...---"
     DL_URL="$(wget -qO- https://api.github.com/repos/owncast/owncast/releases/tags/v${OWNCAST_V} | jq -r '.assets' | grep "browser_download_url" | grep "linux-64bit" | cut -d '"' -f4)"
     if [ -z "$DL_URL" ]; then
         echo "---Something went wrong, can't get download URL of Owncast, putting container into sleep mode!---"
