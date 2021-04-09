@@ -27,7 +27,7 @@ docker run --name Owncast -d \
 	--env 'UMASK=0000' \
 	--env 'DATA_PERM=770' \
 	--volume /mnt/cache/appdata/owncast:/owncast \
-	ich777/docker-owncast
+	ich777/owncast
 ```
 
 This Docker is mainly created for better use with Unraid, if you don't use Unraid you should definitely try it!
