@@ -5,7 +5,7 @@ LABEL maintainer="admin@minenet.at"
  ARG MEDIA_DRV_VERSION=21.2.3
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends jq unzip ffmpeg mesa-va-drivers && \
+	apt-get -y install --no-install-recommends jq unzip ffmpeg mesa-va-drivers ffmpeg libigdgmm11 && \
 	wget -O /tmp/intel-media.tar.gz https://github.com/ich777/media-driver/releases/download/intel-media-${MEDIA_DRV_VERSION}/intel-media-${MEDIA_DRV_VERSION}.tar.gz && \
 	cd /tmp && \
 	tar -C / -xvf /tmp/intel-media.tar.gz && \
