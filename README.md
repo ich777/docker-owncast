@@ -3,6 +3,7 @@ Owncast is a self-hosted live video and web chat server for use with existing po
 
 Update Notice: Simply restart the container if a newer version of the game is available.
 
+
 AMD Hardware transcoding (Please note that you have to be on Unraid 6.9.0beta35 to enable the moduel for AMD):
 
     Open up a Terminal from Unraid and type in: 'modprobe amdgpu' (without quotes or you edit your 'go' file to load it on every restart of Unraid - refer to the support thread)
