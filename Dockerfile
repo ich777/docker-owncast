@@ -13,9 +13,9 @@ RUN apt-get update && \
 	rm -rf /tmp/intel-media.tar.gz && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN wget -O /tmp/FFmpeg.tar.gz https://github.com/ich777/FFmpeg/releases/download/${FFMPEG_V}/FFmpeg-${FFMPEG_V}.tar.gz && \
-	tar -C / -xvf /tmp/FFmpeg.tar.gz && \
-	rm -rf /tmp/FFmpeg.tar.gz
+#RUN wget -O /tmp/FFmpeg.tar.gz https://github.com/ich777/FFmpeg/releases/download/${FFMPEG_V}/FFmpeg-${FFMPEG_V}.tar.gz && \
+#	tar -C / -xvf /tmp/FFmpeg.tar.gz && \
+#	rm -rf /tmp/FFmpeg.tar.gz
 
 ENV DATA_DIR=/owncast
 ENV START_PARAMS=""
