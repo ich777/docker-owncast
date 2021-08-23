@@ -13,7 +13,9 @@ RUN apt-get update && \
 	rm -rf /tmp/intel-media.tar.gz && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN wget -O /tmp/FFmpeg.tar.gz https://github.com/ich777/FFmpeg/releases/download/${FFMPEG_V}/FFmpeg-${FFMPEG_V}.tar.gz && \
+RUN apt-get update && \
+	apt-get -y install libxcb-shm0 libasound2 libxv1 libva2 libx264-160 libx265-192 libva-drm2 libva-x11-2 && \
+	wget -O /tmp/FFmpeg.tar.gz https://github.com/ich777/FFmpeg/releases/download/${FFMPEG_V}/FFmpeg-${FFMPEG_V}.tar.gz && \
 	tar -C / -xvf /tmp/FFmpeg.tar.gz && \
 	rm -rf /tmp/FFmpeg.tar.gz
 
