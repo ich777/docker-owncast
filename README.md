@@ -3,6 +3,26 @@ Owncast is a self-hosted live video and web chat server for use with existing po
 
 Update Notice: Simply restart the container if a newer version of the game is available.
 
+AMD Hardware transcoding (Please note that you have to be on Unraid 6.9.0beta35 to enable the moduel for AMD):
+
+    Open up a Terminal from Unraid and type in: 'modprobe amdgpu' (without quotes or you edit your 'go' file to load it on every restart of Unraid - refer to the support thread)
+    At 'Device' at the bottom here in the template add '/dev/dri'
+    In Owncast open the admin page and go to 'Configuration' -> 'Video Configuration' -> 'Advanced Settins', select 'VA-API hardware encoding' from the dropdown and click 'Yes'
+
+Intel Hardware transcoding:
+
+    Download and install the Intel-GPU-TOP Plugin from the CA App
+    At 'Device' at the bottom here in the template add '/dev/dri'
+    In Owncast open the admin page and go to 'Configuration' -> 'Video Configuration' -> 'Advanced Settins', select 'VA-API hardware encoding' from the dropdown and click 'Yes'
+
+Nvidia Hardware transcoding:
+
+    Download and install the Nvidia-Driver Plugin from the CA App
+    Turn on the 'Advanced View' here in the template and at 'Extra Parameters' add: '--runtime=nvidia'.
+    At 'Nvidia Visible Devices' at the bottom here in the template add your GPU UUID.
+    In Owncast open the admin page and go to 'Configuration' -> 'Video Configuration' -> 'Advanced Settins', select 'NVIDIA GPU acceleration' from the dropdown and click 'Yes'
+
+
 Also visit the Homepage of the creator and consider Donating: https://owncast.online/
 
 ## Env params
