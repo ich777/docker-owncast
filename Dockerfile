@@ -2,15 +2,20 @@ FROM ich777/debian-baseimage
 
 LABEL maintainer="admin@minenet.at"
 
- ARG MEDIA_DRV_VERSION=21.2.3
+ARG MEDIA_DRV_VERSION=21.2.3
+ARG FFMPEG_V=n4.4
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends jq unzip ffmpeg mesa-va-drivers ffmpeg libigdgmm11 && \
+	apt-get -y install --no-install-recommends jq unzip mesa-va-drivers libigdgmm11 && \
 	wget -O /tmp/intel-media.tar.gz https://github.com/ich777/media-driver/releases/download/intel-media-${MEDIA_DRV_VERSION}/intel-media-${MEDIA_DRV_VERSION}.tar.gz && \
 	cd /tmp && \
 	tar -C / -xvf /tmp/intel-media.tar.gz && \
 	rm -rf /tmp/intel-media.tar.gz && \
 	rm -rf /var/lib/apt/lists/*
+
+RUN wget -O /tmp/FFmpeg.tar.gz https://github.com/ich777/FFmpeg/releases/download/${FFMPEG_V}/FFmpeg-${FFMPEG_V}.tar.gz && \
+	tar -C / -xvf /tmp/FFmpeg.tar.gz && \
+	rm -rf /tmp/FFmpeg.tar.gz
 
 ENV DATA_DIR=/owncast
 ENV START_PARAMS=""
