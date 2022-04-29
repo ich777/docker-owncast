@@ -1,6 +1,7 @@
 FROM ich777/debian-baseimage
 
-LABEL maintainer="admin@minenet.at"
+LABEL org.opencontainers.image.authors="admin@minenet.at"
+LABEL org.opencontainers.image.source="https://github.com/ich777/docker-owncast"
 
 ARG MEDIA_DRV_VERSION=21.2.3
 ARG FFMPEG_V=n4.4
