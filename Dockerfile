@@ -15,7 +15,7 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \
-	apt-get -y install libxcb-shm0 libasound2 libxv1 libva2 libx264-160 libx265-192 libva-drm2 libva-x11-2 && \
+	apt-get -y install libxcb-shm0 libasound2 libxv1 libva2 libx264-164 libx265-199 libva-drm2 libva-x11-2 && \
 	rm -rf /var/lib/apt/lists/* && \
 	wget -O /tmp/FFmpeg.tar.gz https://github.com/ich777/FFmpeg/releases/download/${FFMPEG_V}/FFmpeg-${FFMPEG_V}.tar.gz && \
 	tar -C / -xvf /tmp/FFmpeg.tar.gz && \
